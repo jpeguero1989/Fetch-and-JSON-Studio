@@ -27,7 +27,7 @@ returnObject += `<div class="astronaut">
    <ul>
       <li>Hours in space: ${jsonObject[i].hoursInSpace}</li>
       <li id= "${jsonObject[i].active}">Active: ${jsonObject[i].active}</li>
-      <li>Skills: ${getSkill(jsonObject[i].skills)}</li>
+      <li>Skills: ${jsonObject[i].skills}</li>
    </ul>
 </div>
 <img class="avatar" src="${jsonObject[i].picture}">
@@ -38,14 +38,15 @@ returnObject += `<div class="astronaut">
 
 function getSkill(skillArray)
 {
+    alert(skillArray);
 let skills="";
-for (let i=0;i<skillArray.length;i++)
+for (let s=0;s<skillArray.length;s++)
 {
     if (skills == "")
     {
-        skills = skillArray[i];
+        skills = skillArray[s];
     }else {
-        skills = skillArray[i] + ", " + skills;
+        skills = skillArray[s] + ", " + skills;
     }
 
     return skills;
